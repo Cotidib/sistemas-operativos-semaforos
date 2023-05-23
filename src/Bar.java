@@ -1,9 +1,9 @@
 import java.util.concurrent.Semaphore;
 
 public class Bar {
-    static Semaphore barril = new Semaphore(1);
-    static Semaphore rellenar = new Semaphore(0);
-    static int vasos = 10; 
+    static Semaphore barril = new Semaphore(1); //protege las operaciones sobre vasos
+    static Semaphore rellenar = new Semaphore(0); //señal para rellenar
+    static int vasos = 10; //cantidad de vasos disponibles dentro del barril
 
     static class Camarero extends Thread{
         public void run(){
